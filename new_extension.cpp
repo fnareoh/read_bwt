@@ -168,7 +168,6 @@ int main(){
     cout << "reads.in loaded." << endl;
     stringstream s;
     reads >> N >> l >> o;
-		cout << "N " << N << endl;
     for(int i = 0; i < N; i ++) {
       string r; reads >> r;
       s << r << '$';
