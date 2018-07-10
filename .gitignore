@@ -1,0 +1,12 @@
+# exec #
+program
+extract
+extension
+new_extension
+test_struct
+test_program
+
+# in file #
+data/*.out
+data/reads*
+data/pattern.in
