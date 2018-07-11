@@ -21,9 +21,11 @@ read_bwt::read_bwt(string &T, int n, bit_vector &is_ext){
 	bit_vector c = bit_vector(bwt_size,0);
   bit_vector g = bit_vector(bwt_size,0);
 	bit_vector t = bit_vector(bwt_size,0);
-  map<char, bit_vector> bp_vector = {{'A',a},{'C',c},{'G',g},{'T',t}};
+	bit_vector N = bit_vector(bwt_size,0);
+  map<char, bit_vector> bp_vector = {{'A',a},{'C',c},{'G',g},{'N',N},{'T',t}};
+	map<char, int> bp_num = {{'A',0},{'C',1},{'G',2},{'N',3},{'T',4}};
   stringstream sbwt;
-  vector<int> C(4,0);
+  vector<int> C(5,0);
   int C_index = 1;
   char last_letter_F = 'A';
   int sbwt_size = -1;
@@ -42,6 +44,10 @@ read_bwt::read_bwt(string &T, int n, bit_vector &is_ext){
       }
       if (T[csa[i]]!='$') {
         if (T[csa[i]]!=last_letter_F){
+					if(C_index != bp_num[T[csa[i]]]){
+						C[C_index] = C[C_index-1];
+						C_index++;
+					}
           C[C_index] = sbwt_size;
           C_index++;
         }
@@ -50,7 +56,7 @@ read_bwt::read_bwt(string &T, int n, bit_vector &is_ext){
 		}
 	}
 	wavelet_F wt_F_(C,end_read);
-	wavelet_L wt_L_(sbwt.str(), sd_vector<>(bp_vector['A']), sd_vector<>(bp_vector['C']), sd_vector<>(bp_vector['G']), sd_vector<>(bp_vector['T']));
+	wavelet_L wt_L_(sbwt.str(), sd_vector<>(bp_vector['A']), sd_vector<>(bp_vector['C']), sd_vector<>(bp_vector['G']), sd_vector<>(bp_vector['N']), sd_vector<>(bp_vector['T']));
 	wt_F.copy(wt_F_); //improper gestion
 	wt_L.copy(wt_L_);
 }
@@ -60,6 +66,7 @@ char lower_case(char a){
     case 'A': return 'a';
     case 'C': return 'c';
     case 'G': return 'g';
+		case 'N': return 'n';
     case 'T': return 't';
   }
   return '$';

@@ -23,9 +23,12 @@ extension: extension.cpp
 new_extension: new_extension.cpp
 		$(CC) $(CFLAGS) $(SDSLFLAGS1) new_extension.cpp -o new_extension $(SDSLFLAGS2)
 
+all_extension: all_extension.cpp
+	$(CC) $(CFLAGS) $(SDSLFLAGS1) all_extension.cpp -o all_extension $(SDSLFLAGS2)
+
 all:
-	make extract extension new_extension test_struct
+	make extract extension new_extension all_extension test_struct
 
 clean:
-	rm extract extension new_extension test_struct
+	rm extract extension new_extension all_extension test_struct
 	rm data/*.out data/reads* data/pattern.in

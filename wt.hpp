@@ -37,11 +37,13 @@ class wavelet_L {
 	sd_vector<>::rank_1_type c_rank;
 	sd_vector<> g;
 	sd_vector<>::rank_1_type g_rank;
+	sd_vector<> n;
+	sd_vector<>::rank_1_type n_rank;
 	sd_vector<> t;
 	sd_vector<>::rank_1_type t_rank;
 public:
 	wavelet_L();
-	wavelet_L(string, sd_vector<>, sd_vector<>, sd_vector<>, sd_vector<>);
+	wavelet_L(string, sd_vector<>, sd_vector<>, sd_vector<>, sd_vector<>, sd_vector<>);
 	int rank(int,char);
 	float save(string);
 	int load(string);

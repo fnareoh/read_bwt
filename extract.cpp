@@ -35,7 +35,7 @@ string filter_dna(){
     std::istreambuf_iterator<char>());
     t.erase(std::remove(t.begin(), t.end(), '\n'), t.end());
     for(int i = 0; i < t.size();i++){
-      if (t[i] == 'A' || t[i] == 'C' || t[i] == 'G' || t[i] == 'T'){
+      if (t[i] == 'A' || t[i] == 'C' || t[i] == 'G' || t[i] == 'T' || t[i] == 'N'){
         T << t[i];
       }
     }

@@ -3,6 +3,7 @@ program
 extract
 extension
 new_extension
+all_extension
 test_struct
 test_program
 
