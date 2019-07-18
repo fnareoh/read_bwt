@@ -8,11 +8,11 @@ The implementation was done by Garance Gourdel (garance.gourdel@ens-paris-saclay
 
 ### Requirements
 ------------
-The use of the data stucture requires the sdsl-lite library [https://github.com/simongog/sdsl-lite].
+The use of the data stucture requires the [sdsl-lite library](https://github.com/simongog/sdsl-lite).
 
 ### Acknowlegment
 ------------
-All the file in the `/internal` directory are the data structure Nicola Prezza implemented for the R-index [https://github.com/nicolaprezza/r-index]. The `data/dna.in` file used by `extract.cpp` to generate the reads is the dna file from Pizza & Chili [http://pizzachili.dcc.uchile.cl/].
+All the file in the `/internal` directory are the data structure Nicola Prezza implemented for the [R-index](https://github.com/nicolaprezza/r-index). The `data/dna.in` file used by `extract.cpp` to generate the reads is the dna file from [Pizza & Chili](http://pizzachili.dcc.uchile.cl/).
 
 ### Installation
 ------------
